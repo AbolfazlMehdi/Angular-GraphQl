@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="w-100 vh-100 d-flex justify-content-center align-items-center">
+  <div class="container d-flex align-items-center justify-content-between w-auto bg-white rounded-3 shadow  ps-0">
+    <div class="left">
+      <img src="assets/img/login.png" alt="login" class="w-100 login-img">
+    </div>
+    <div class="right">
+      <h2 class="mb-3">Login</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmitFor()">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="Username" placeholder="Username" formControlName="userName">
+          <label for="Username">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="Password" placeholder="Password" formControlName="password">
+          <label for="Password">Password</label>
+        </div>
+        <div class="d-grid">
+          <button class="btn btn-success" type="submit">Login</button>
+        </div>
+      </form>
+      <p class="mt-3 mb-0 text-gray fw-semibold">Don't have an account? <a class="link-primary" [routerLink]="'/auth/register'">Sign up</a></p>
+    </div>
+  </div>
+
+</div>
