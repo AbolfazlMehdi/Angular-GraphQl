@@ -1,1 +1,43 @@
-<p>register works!</p>
+<div class="w-100 vh-100 d-flex justify-content-center align-items-center">
+    <div class="container d-flex align-items-center justify-content-between w-auto bg-white rounded-3 shadow  ps-0">
+      <div class="left">
+        <img src="assets/img/login.png" alt="Auth Image" class="w-100 auth-img">
+      </div>
+      <div class="right">
+        <h2 class="mb-3">Registery</h2>
+  
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmitFor()">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="Username" placeholder="Username" formControlName="userName">
+            <label for="Username">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
+            <label for="firstName">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
+            <label for="lastName">Last Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="mobileNumber" placeholder="Mobile Number" formControlName="mobileNumber">
+            <label for="mobileNumber">Mobile Number</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="Password" placeholder="Password" formControlName="password">
+            <label for="Password">Password</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
+            <label for="Password">Confirm Password</label>
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-success" type="submit">Sign Up</button>
+          </div>
+        </form>
+        <p class="mt-3 mb-0 text-gray fw-semibold">Do have an account? <a class="link-primary" [routerLink]="'/auth/login'">Sign In</a></p>
+      </div>
+    </div>
+  
+  </div>
+  
