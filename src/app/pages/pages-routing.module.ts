@@ -4,7 +4,9 @@ import {PagesComponent} from "./pages.component";
 
 const routes: Routes = [
   {
-    path: '', component: PagesComponent, children: []
+    path: '', component: PagesComponent, children: [
+      {path: 'quize' , loadChildren: () => import('./quize/quize.module').then(q => q.QuizeModule)}
+    ]
   }
 ];
 
