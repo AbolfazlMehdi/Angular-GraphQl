@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo, a } from 'apollo-angular';
-import { quQL } from 'src/app/graphQL/graphQl.quries';
+import { Apollo } from 'apollo-angular';
+import { getFruit } from './quize.service';
 
 @Component({
   selector: 'app-quize',
@@ -15,11 +15,10 @@ constructor(private apollo: Apollo){}
 
 ngOnInit(): void {
     this.apollo.watchQuery({
-      query: quQL
+      query: getFruit
     }).valueChanges.subscribe({
-      next: (res) => {
-          this.data = res?.data?['quize']: [];
-          this.error = res?.error;
+      next: (res: any) => {
+          this.data = res?.data ? res.data.allUsers: [];
           this.loading = res?.loading;
 
       }
