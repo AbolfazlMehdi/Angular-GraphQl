@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h4 class="modal-title">Hi there!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form">
+    <div class="row gap-3">
+        <div class="col-12">
+            <label>Friut Name: </label>
+            <input class="form-control" formControlName="name"/>
+            <span class="text-danger fs-6" *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">Friut Name is required.</span>
+        </div>
+        <div class="col-12">
+            <label>Friut Price: </label>
+            <input class="form-control" formControlName="price"/>
+            <span class="text-danger fs-6" *ngIf="form.get('price')?.hasError('required') && form.get('price')?.touched">Friut Price is required.</span>
+            <span class="text-danger fs-6" *ngIf="form.get('price')?.hasError('min')">Friut Price could not below of 0.1 dollar.</span>
+
+        </div>
+    </div>
+    </form>
+</div>
+<div class="modal-footer">
+
+    <ng-container *ngIf="mode === 'add'">
+    <button type="submit" class="btn btn-outline-primary" (click)="saveFruit()">save</button>
+
+    </ng-container>
+    
+   
+
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

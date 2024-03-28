@@ -1,4 +1,8 @@
 module.exports = {
+    fruits: [
+        {id: 1 , name: 'apple' , price: 2}
+    ],
+
     posts: [
         { id: 1, title: "Lorem Ipsum", views: 254, user_id: 123 },
         { id: 2, title: "Sic Dolor amet", views: 65, user_id: 456 },
